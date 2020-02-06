@@ -1,12 +1,13 @@
-name: Build and Publish Docker
+name: Publish Docker
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: mr-smithers-excellent/docker-build-push@v2
-      with:
-        image: shengael/esgi-toolchain
-        registry: docker.io
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+      - uses: actions/checkout@master
+      - name: Publish to Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: shengael/esgi-toolchain
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
