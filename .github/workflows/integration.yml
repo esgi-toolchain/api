@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      uses: mr-smithers-excellent/docker-build-push@v2
+      - uses: mr-smithers-excellent/docker-build-push@v2
       with:
         image: shengael/esgi-toolchain
         registry: docker.io
