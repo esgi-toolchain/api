@@ -7,7 +7,6 @@ COPY . /api
 
 RUN npm ci && npm run build
 
-
 FROM node:12-alpine
 
 ENV NODE_ENV production
