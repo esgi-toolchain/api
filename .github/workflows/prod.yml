@@ -17,8 +17,11 @@ jobs:
       - name: Build and push
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
         run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
       - name: Release
         env:
+          DD_AGENT_MAJOR_VERSION: ${{secrets.DD_AGENT_MAJOR_VERSION}}
+          DD_API_KEY: ${{secrets.DD_API_KEY}}
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web

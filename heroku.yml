@@ -1,4 +1,0 @@
-build:
-  config:
-    DD_AGENT_MAJOR_VERSION: 7
-    DD_API_KEY: a832bd9d0dd7675c5197119d84dc103c
