@@ -22,6 +22,7 @@ COPY --from=builder /api/package*.json /api/
 COPY --from=builder /api/dist/ /api/dist/
 COPY --from=builder /api/.env /api/.env
 COPY --from=builder /api/run.sh /api/run.sh
+COPY --from=builder /api/datadog.sh /api/datadog.sh
 ARG DD_API_KEY
 ENV DD_API_KEY ${DD_API_KEY}
 ARG DD_AGENT_MAJOR_VERSION
