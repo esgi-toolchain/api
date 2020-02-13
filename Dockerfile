@@ -4,7 +4,6 @@ ENV NODE_ENV build
 WORKDIR /api
 
 COPY . /api
-
 RUN npm ci && npm run build
 
 FROM node:12-alpine
