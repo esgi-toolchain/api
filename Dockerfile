@@ -19,5 +19,4 @@ COPY --from=builder /api/dist/ /api/dist/
 RUN npm ci
 
 EXPOSE 80
-
 CMD ["node", "dist/main.js"]
