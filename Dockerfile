@@ -27,7 +27,7 @@ ARG DD_API_KEY
 ENV DD_API_KEY ${DD_API_KEY}
 ARG DD_AGENT_MAJOR_VERSION
 ENV DD_AGENT_MAJOR_VERSION ${DD_AGENT_MAJOR_VERSION}
-RUN DD_INSTALL_ONLY=true bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)"
+RUN DD_INSTALL_ONLY=true bash -c "$(cat datadog.sh)"
 RUN npm ci
 
 EXPOSE 3000
