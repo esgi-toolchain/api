@@ -4,7 +4,6 @@ ENV NODE_ENV build
 WORKDIR /api
 
 COPY . /api
-ENV NODE_ENV production
 ENV DATABASE_CONNECTION mysql
 ENV DATABASE_HOST orchestration.mysql.database.azure.com
 ENV DATABASE_USERNAME shengael@orchestration
@@ -13,10 +12,12 @@ ENV DATABASE_DATABASE classroom
 ENV DATABASE_PORT 3306
 ENV DATABASE_SYNCHRONIZE true
 ENV DATABASE_LOGGING true
+
 RUN npm ci && npm run build && npm test
 
 FROM ubuntu:18.04
 
+ENV NODE_ENV production
 # Install Node.js
 RUN apt update --yes
 RUN apt install --yes curl
