@@ -4,6 +4,10 @@ import { AppModule } from './app.module';
 import * as helmet from 'helmet';
 
 const ddOptions = {
+  path: true,
+  base_url: true,
+  method: true,
+  protocol: true,
   response_code: true,
   tags: ['env:prod'],
 };
