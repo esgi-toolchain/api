@@ -4,7 +4,7 @@ ENV NODE_ENV build
 WORKDIR /api
 
 COPY . /api
-RUN npm ci && npm run build
+RUN npm ci && npm run build && npm test
 
 FROM ubuntu:18.04
 
@@ -20,7 +20,6 @@ WORKDIR /api
 
 COPY --from=builder /api/package*.json /api/
 COPY --from=builder /api/dist/ /api/dist/
-COPY --from=builder /api/.env /api/.env
 COPY --from=builder /api/run.sh /api/run.sh
 COPY --from=builder /api/datadog.sh /api/datadog.sh
 ARG DD_API_KEY

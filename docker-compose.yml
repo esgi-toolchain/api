@@ -4,8 +4,6 @@ services:
   api:
     container_name: toolchain-api
     restart: always
-    env_file:
-      - .env
     build:
       context: .
       args:
