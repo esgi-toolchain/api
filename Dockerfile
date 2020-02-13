@@ -15,6 +15,7 @@ WORKDIR /api
 
 COPY --from=builder /api/package*.json /api/
 COPY --from=builder /api/dist/ /api/dist/
+COPY --from=builder /api/.env /api/.env
 
 RUN npm ci
 
