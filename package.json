@@ -27,6 +27,7 @@
     "@nestjs/platform-fastify": "^6.11.5",
     "@nestjs/typeorm": "^6.2.0",
     "connect-datadog": "0.0.9",
+    "dd-trace": "^0.17.1",
     "helmet": "^3.21.2",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
